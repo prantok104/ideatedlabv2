@@ -2,20 +2,1094 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+body {
+  overflow-x: hidden;
+  background-color: #f8f8f8;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+::-webkit-scrollbar {
+  width: 5px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(85, 84, 84, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #e4dfdf;
+  outline: 1px solid #9aa0a5;
+  border-radius: 5px;
+}
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.navbar {
+  @apply flex justify-between items-center py-4;
+}
+
+.navbar ul {
+  @apply hidden md:flex justify-between items-center;
+}
+
+.navbar li {
+  @apply mr-6;
+}
+
+.navbar a {
+  @apply text-gray-600 hover:text-gray-900;
+}
+
+.user-menu {
+  @apply relative;
+}
+
+.user-menu button {
+  @apply flex justify-center w-8 h-8 bg-gray-200 hover:bg-gray-300 rounded-full;
+}
+
+.user-menu ul {
+  @apply absolute top-0 right-0 w-48 bg-white shadow-md py-2 hidden group-hover:block;
+}
+
+.user-menu li {
+  @apply block px-4 py-2;
+}
+
+.user-menu a {
+  @apply block px-4 py-2 text-gray-600 hover:text-gray-900;
+}
+
+.user-menu span {
+  @apply mr-2;
+}
+
+.user-menu .text-gray-500 {
+  @apply text-xs;
+}
+
+/* Loader CSS */
+.human-body {
+  position: absolute;
+  top: 50%;
+  margin-left: -50px;
+  left: 50%;
+  animation: speeder 0.4s linear infinite;
+
+  > span {
+    height: 5px;
+    width: 35px;
+    background: #fff;
+    position: absolute;
+    top: -19px;
+    left: 60px;
+    border-radius: 2px 10px 1px 0;
+  }
+}
+
+.human-base {
+  span {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 6px solid transparent;
+    border-right: 100px solid #fff;
+    border-bottom: 6px solid transparent;
+
+    &:before {
+      content: "";
+      height: 22px;
+      width: 22px;
+      border-radius: 50%;
+      background: #fff;
+      position: absolute;
+      right: -110px;
+      top: -16px;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-top: 0 solid transparent;
+      border-right: 55px solid #fff;
+      border-bottom: 16px solid transparent;
+      top: -16px;
+      right: -98px;
+    }
+  }
+}
+
+.human-face {
+  position: absolute;
+  height: 12px;
+  width: 20px;
+  background: #fff;
+  border-radius: 20px 20px 0 0;
+  transform: rotate(-40deg);
+  right: -125px;
+  top: -15px;
+
+  &:after {
+    content: "";
+    height: 12px;
+    width: 12px;
+    background: #fff;
+    right: 4px;
+    top: 7px;
+    position: absolute;
+    transform: rotate(40deg);
+    transform-origin: 50% 50%;
+    border-radius: 0 0 0 2px;
+  }
+}
+
+.human-body > span > span:nth-child(1),
+.human-body > span > span:nth-child(2),
+.human-body > span > span:nth-child(3),
+.human-body > span > span:nth-child(4) {
+  width: 30px;
+  height: 1px;
+  background: #fff;
+  position: absolute;
+  animation: fazer1 0.2s linear infinite;
+}
+
+.human-body > span > span:nth-child(2) {
+  top: 3px;
+  animation: fazer2 0.4s linear infinite;
+}
+
+.human-body > span > span:nth-child(3) {
+  top: 1px;
+  animation: fazer3 0.4s linear infinite;
+  animation-delay: -1s;
+}
+
+.human-body > span > span:nth-child(4) {
+  top: 4px;
+  animation: fazer4 1s linear infinite;
+  animation-delay: -1s;
+}
+
+@keyframes fazer1 {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -80px;
+    opacity: 0;
+  }
+}
+
+@keyframes fazer2 {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -100px;
+    opacity: 0;
+  }
+}
+
+@keyframes fazer3 {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -50px;
+    opacity: 0;
+  }
+}
+
+@keyframes fazer4 {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -150px;
+    opacity: 0;
+  }
+}
+
+@keyframes speeder {
+  0% {
+    transform: translate(2px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -3px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-2px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 3px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-1px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-2px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(2px, 1px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+
+.longfazers {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+
+  span {
+    position: absolute;
+    height: 2px;
+    width: 20%;
+    background: #fff;
+
+    &:nth-child(1) {
+      top: 20%;
+      animation: lf 0.6s linear infinite;
+      animation-delay: -5s;
+    }
+
+    &:nth-child(2) {
+      top: 40%;
+      animation: lf2 0.8s linear infinite;
+      animation-delay: -1s;
+    }
+
+    &:nth-child(3) {
+      top: 60%;
+      animation: lf3 0.6s linear infinite;
+    }
+
+    &:nth-child(4) {
+      top: 80%;
+      animation: lf4 0.5s linear infinite;
+      animation-delay: -3s;
+    }
+  }
+}
+
+@keyframes lf {
+  0% {
+    left: 200%;
+  }
+  100% {
+    left: -200%;
+    opacity: 0;
+  }
+}
+@keyframes lf2 {
+  0% {
+    left: 200%;
+  }
+  100% {
+    left: -200%;
+    opacity: 0;
+  }
+}
+@keyframes lf3 {
+  0% {
+    left: 200%;
+  }
+  100% {
+    left: -100%;
+    opacity: 0;
+  }
+}
+@keyframes lf4 {
+  0% {
+    left: 200%;
+  }
+  100% {
+    left: -100%;
+    opacity: 0;
+  }
+}
+
+.error-page {
+  @apply h-screen flex justify-center items-center;
+}
+
+.error-page h1 {
+  @apply text-4xl font-bold text-red-600;
+}
+
+.error-page p {
+  @apply text-lg text-gray-600;
+}
+
+.error-page button {
+  @apply bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded;
+}
+
+.font-public-sans {
+  font-family: "Public Sans", sans-serif;
+}
+
+/* Common Button Base */
+.button-base {
+  background-color: #73c002;
+  color: #f9fafb;
+  border-radius: 0.375rem; /* equivalent to rounded-md in Tailwind */
+  transition: all 0.3s ease;
+  font-weight: 600;
+  line-height: 24px; /* equivalent to font-semibold in Tailwind */
+}
+
+.button-base:hover {
+  background-color: #3f6a01;
+}
+
+.button-base:focus {
+  border: 2px solid #73c002; /* Inner border */
+  color: #f9fafb;
+  border-radius: 6px; /* Border radius */
+  outline: 2px solid #73c002 !important; /* Outer border */
+  outline-offset: 2px !important; /* Space between border and outline */
+}
+
+/* Disabled Button */
+.button-disabled {
+  background-color: #919eab;
+  color: #f9fafb;
+  cursor: not-allowed;
+  border-radius: 0.375rem;
+  line-height: 24px;
+  font-weight: 600;
+}
+
+/* =========stroke button========== */
+.button-stroke {
+  background-color: #fff !important;
+  color: #73c002;
+  border-radius: 0.375rem; /* equivalent to rounded-md in Tailwind */
+  transition: all 0.3s ease;
+  font-weight: 600;
+  line-height: 24px;
+  border-radius: 6px;
+  border: 1px solid #73c002;
+}
+
+/* hover state stoke button */
+.button-stroke:hover {
+  background-color: #f1f9e6 !important;
+}
+
+/* focus state stoke button */
+.button-stroke:focus {
+  border: 2px solid #73c002; /* Inner border */
+  border-radius: 6px; /* Border radius */
+  outline: 2px solid #73c002 !important; /* Outer border */
+  outline-offset: 2px !important; /* Space between border and outline */
+}
+
+/* =========stroke button========== */
+
+/* ========text button========= */
+
+.button-text {
+  background-color: transparent;
+  color: #73c002;
+  border-radius: 0.375rem; /* equivalent to rounded-md in Tailwind */
+  transition: all 0.3s ease;
+  font-weight: 600;
+  line-height: 24px;
+  border-radius: 6px;
+}
+
+/* hover state text button */
+.button-text:hover {
+  color: #3f6a01;
+}
+
+/* focus state text button */
+.button-text:focus {
+  border: 2px solid #73c002; /* Inner border */
+  border-radius: 6px; /* Border radius */
+  outline: 2px solid #73c002 !important; /* Outer border */
+  outline-offset: 1px !important; /* Space between border and outline */
+}
+
+.button-text-disabled {
+  background-color: transparent;
+  color: #919eab !important;
+  font-weight: 600 !important;
+  line-height: 24px !important;
+  cursor: not-allowed !important;
+}
+
+/* text button with icons */
+.button-text-icon {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: transparent;
+  color: #73c002;
+  border-radius: 0.375rem; /* equivalent to rounded-md in Tailwind */
+  transition: all 0.3s ease;
+  font-weight: 600;
+  line-height: 24px;
+  border-radius: 6px;
+  margin: 10px; /* equivalent to font-semibold in Tailwind */
+}
+
+.button-text-icon:hover {
+  color: #3f6a01; /* equivalent to font-semibold in Tailwind */
+}
+
+/* icon button when focus */
+.button-text-icon:focus {
+  border: 2px solid #73c002; /* Inner border */
+  border-radius: 6px; /* Border radius */
+  outline: 2px solid #73c002 !important; /* Outer border */
+  outline-offset: 1px !important; /* Space between border and outline */
+}
+
+.button-text-icon:hover .icon {
+  color: #3f6a01;
+}
+
+/* icon button when disabled */
+.button-text-icon-disabled {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #919eab;
+  font-weight: 600;
+  line-height: 24px;
+  cursor: not-allowed;
+}
+
+/* ========text button end========= */
+
+/* ========icon button========= */
+
+.fill-icon-button {
+  background-color: #73c002;
+  color: #f1f9e6;
+  border-radius: 100px;
+  transition: all 0.3s ease;
+}
+
+/* hover state fill icon button */
+.fill-icon-button:hover {
+  background-color: #3f6a01;
+}
+
+/* focus state fill icon button */
+.fill-icon-button:focus {
+  border: 2px solid #73c002; /* Inner border */
+  border-radius: 100px; /* Border radius */
+  outline: 2px solid #73c002 !important; /* Outer border */
+  outline-offset: 2px !important; /* Space between border and outline */
+}
+
+/* fill icon button disableds */
+.fill-icon-button-disabled {
+  background-color: #919eab;
+  color: #f1f9e6;
+  border-radius: 100px;
+  cursor: not-allowed;
+}
+
+/* stroke icon button */
+.stroke-icon-button {
+  background-color: transparent;
+  color: #73c002;
+  border: 1px solid #73c002;
+  border-radius: 100px;
+  transition: all 0.3s ease;
+}
+
+/* hover state stroke icon button */
+.stroke-icon-button:hover {
+  background-color: #f1f9e6;
+  color: #73c002;
+}
+
+/* focus state stroke icon button */
+.stroke-icon-button:focus {
+  border: 2px solid #73c002; /* Inner border */
+  border-radius: 100px; /* Border radius */
+  outline: 2px solid #73c002 !important; /* Outer border */
+  outline-offset: 2px !important; /* Space between border and outline */
+}
+/* ========icon button end========= */
+
+/* reactable icon button */
+
+.reactangle-fill-icon-button {
+  background-color: #73c002;
+  color: #f1f9e6;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+/* hover state fill icon button */
+.reactangle-fill-icon-button:hover {
+  background-color: #3f6a01;
+}
+
+/* focus state fill icon button */
+.reactangle-fill-icon-button:focus {
+  border: 2px solid #73c002; /* Inner border */
+  border-radius: 6px; /* Border radius */
+  outline: 2px solid #73c002 !important; /* Outer border */
+  outline-offset: 2px !important; /* Space between border and outline */
+}
+
+/* fill icon button disableds */
+.reactangle-fill-icon-button-disabled,
+.reactangle-stroke-icon-button-disabled {
+  background-color: #919eab;
+  color: #f1f9e6;
+  border-radius: 6px;
+  cursor: not-allowed;
+}
+
+/* stroke icon button */
+.reactangle-stroke-icon-button {
+  background-color: transparent;
+  color: #73c002;
+  border: 1px solid #73c002;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+/* hover state stroke icon button */
+.reactangle-stroke-icon-button:hover {
+  background-color: #f1f9e6;
+  color: #73c002;
+}
+
+/* focus state stroke icon button */
+.reactangle-stroke-icon-button:focus {
+  border: 2px solid #73c002; /* Inner border */
+  border-radius: 6px; /* Border radius */
+  outline: 2px solid #73c002 !important; /* Outer border */
+  outline-offset: 2px !important; /* Space between border and outline */
+}
+
+.print-btn {
+  border: 1px solid #919eab;
+  background-color: #ffffff;
+  color: #637381;
+  border-radius: 6px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+/* stroke icon button */
+
+/* remove button */
+.remove-btn {
+  background-color: transparent !important;
+  color: #ff5630 !important;
+  border: 1px solid #ff5630 !important;
+  border-radius: 6px !important;
+  transition: all 0.3s ease !important;
+}
+
+/* hover state stroke icon button */
+.remove-btn:hover {
+  background-color: #ff5630 !important;
+  color: #f1f9e6 !important;
+}
+
+/* reactable icon button end */
+
+/* upgrade plan wrapper bg */
+.upgrade-card-wrapper {
+  background: url("../../public/asset/bg-plan-upgrade.png") center/cover
+    no-repeat;
+  margin: 330px 0 20px;
+}
+
+/* custom checkbox color  */
+.custom-checkbox {
+  /* Hide the default checkbox */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  display: inline-block;
+  /* width: 16px;
+  height: 16px; */
+  background-color: #ffffff; /* Default background color */
+  border: 2px solid #d1d5db; /* Tailwind gray-300 */
+  border-radius: 0.25rem; /* Tailwind rounded */
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+  vertical-align: middle; /* Aligns checkbox with the label */
+}
+
+/* Checked state - change the background and add checkmark */
+.custom-checkbox:checked {
+  background-color: #73c002; /* Custom green color */
+  border-color: #73c002; /* Match border to background */
+}
+
+/* Checkmark icon */
+.custom-checkbox:checked::after {
+  font-size: 10px;
+  content: "✔"; /* Unicode checkmark */
+  color: white !important;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Focus state - add a focus ring */
+.custom-checkbox:focus {
+  outline: none;
+  box-shadow: #73c002; /* Custom focus ring */
+}
+
+/* Disabled state */
+.custom-checkbox:disabled {
+  background-color: #e5e7eb; /* Tailwind gray-200 */
+  cursor: not-allowed;
+}
+
+.custom-checkbox:indeterminate {
+  background-color: #73c002;
+  border-color: #73c002;
+}
+
+.custom-checkbox:indeterminate::after {
+  content: "-";
+  font-size: 14px;
+  color: white !important;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* custom checkbox color  end */
+
+/* RadioButton.css */
+
+.custom-radio {
+  width: 15px;
+  height: 15px;
+  border: 2px solid #73c002;
+  border-radius: 50%;
+  position: relative;
+  appearance: none;
+  cursor: pointer;
+}
+
+.custom-radio:checked {
+  background-color: #73c002;
+}
+
+.custom-radio:checked::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.radio-label {
+  margin-left: 8px;
+  font-size: 0.875rem;
+  color: #4a4a4a;
+}
+
+/* tab transition effect */
+.tab-transition-enter {
+  opacity: 0;
+  transform: translate(20px); /* Optional: Adds slight upward motion */
+}
+
+.tab-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 500ms ease, transform 500ms ease; /* Smooth transition */
+}
+
+.tab-transition-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tab-transition-exit-active {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 500ms ease, transform 500ms ease;
+}
+
+/* styles/globals.css or styles/Modal.module.css */
+.ck-editor__editable {
+  min-height: 200px !important;
+}
+
+/* website styels here */
+/* hero style here */
+.hero-section {
+  background: url("../../public/asset/website-images/hero-bg.jpg");
+  /* background-color: rgba(0, 0, 0, 0.668);
+  background-blend-mode: overlay; */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* our customer says section */
+.our-customer-says {
+  background: url("../../public/asset/website-images/our-customer-says-bg_4_11zon.png");
+  background-color: rgba(9, 38, 1, 0.815);
+  background-blend-mode: overlay;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.testimonial-card {
+  border-radius: 16px;
+  border: 1px solid rgba(212, 233, 177, 0.17);
+  background: rgba(94, 105, 108, 0.2);
+  backdrop-filter: blur(25px);
+  padding: 25px 20px;
+}
+
+.call-to-action {
+  background: linear-gradient(180deg, #74c002 0%, #d3af36 100%);
+}
+
+.informative-section {
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0px 5px 40px 0px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Styles for custom pricing cards */
+.custom-pricing-cards {
+  box-sizing: border-box;
+}
+
+/* Tabs */
+.custom-tabs {
+  display: flex;
+}
+
+.custom-tab {
+  padding: 12px 50px;
+  text-align: center;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: 500;
+  color: #fff;
+  border-bottom: 5px solid #ffffff;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.custom-tab-active {
+  border-bottom: 5px solid #73c002;
+  color: #73c002;
+  font-weight: bold;
+}
+
+/* Cards Grid */
+
+.custom-card {
+  padding-block: 32px;
+  padding-inline: 26px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #101d21;
+  color: #688087;
+}
+
+.custom-card-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.custom-card-description {
+  font-size: 14px;
+  color: #666;
+}
+
+.custom-card-green {
+  background: #73c002;
+  border: 0px solid; /* Remove border */
+  padding: 16px;
+  border-radius: 8px;
+  padding-block: 32px;
+  padding-inline: 26px;
+}
+
+.border-pricing {
+  border: 1px solid #24373d;
+}
+
+.custom-card-green .custom-card-facilities,
+.custom-card-not-available {
+  color: #f1f9e6;
+}
+
+.button-stroke-orange {
+  background-color: #fff !important;
+  color: #ffab00;
+  border-radius: 0.375rem; /* equivalent to rounded-md in Tailwind */
+  transition: all 0.3s ease;
+  font-weight: 600;
+  line-height: 24px;
+  border-radius: 6px;
+  border: 1px solid #ffab00;
+}
+
+/* hover state stoke button */
+.button-stroke-orange :hover {
+  background-color: #ffaa0062 !important;
+}
+
+/* focus state stoke button */
+.button-stroke-orange :focus {
+  border: 2px solid #ffab00; /* Inner border */
+  border-radius: 6px; /* Border radius */
+  outline: 2px solid #ffab00 !important; /* Outer border */
+  outline-offset: 2px !important; /* Space between border and outline */
+}
+
+/* for react table flow control */
+/* .table-wrap > div {
+  overflow-x: visible !important;
+  overflow-y: visible !important;
+}
+
+.table-wrap {
+  overflow-y: auto;
+} */
+
+.dashboard-title-card {
+  background: url("../../public/asset/shipper_dashboard/truck-bg.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  border-radius: 25px;
+}
+
+.dashboard-title-card-two {
+  background: url("../../public/asset/shipper_dashboard/title-card-two-dashboard.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  border-radius: 12px;
+}
+
+.dashboard-shipment-card {
+  background: url("../../public/asset/shipper_dashboard/cardBg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  border-radius: 8px;
+}
+
+/* test */
+/* Commodities.css */
+.placeholder-custom::placeholder {
+  color: #a0aec0;
+  font-size: 14px;
+}
+
+.custom-input-commodities {
+  line-height: 0px !important;
+}
+
+.custom-checkbox-two {
+  /* Hide the default checkbox */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-color: #ffffff; /* Default background color */
+  border: 2px solid #d1d5db; /* Tailwind gray-300 */
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+  vertical-align: middle;
+  border-color: #73c002;
+}
+
+/* Checked state - change the background and add checkmark */
+.custom-checkbox-two:checked {
+  background-color: #73c002; /* Custom green color */
+  border-color: #73c002; /* Match border to background */
+}
+
+/* Checkmark icon */
+.custom-checkbox-two:checked::after {
+  content: "";
+  width: 4px; /* Adjust size to fit inside checkbox */
+  height: 4px;
+  background-color: #ffffff; /* White color */
+  border-radius: 50%; /* Make the checkmark circle */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the circle */
+}
+
+/* Focus state - add a focus ring */
+.custom-checkbox-two:focus {
+  outline: none;
+  box-shadow: #73c002; /* Custom focus ring */
+}
+
+/* Disabled state */
+.custom-checkbox-two:disabled {
+  background-color: #e5e7eb; /* Tailwind gray-200 */
+  cursor: not-allowed;
+}
+
+/* Stepper up  */
+.step-item {
+  @apply relative flex justify-start items-center min-h-16;
+}
+
+.step-item:not(:first-child):before {
+  @apply content-[''] bg-[#C4CDD5] h-full w-[2px] absolute left-[5px] -translate-y-2/4;
+}
+
+.step {
+  @apply w-3 h-3 flex justify-center items-center bg-[#C4CDD5] text-white font-semibold z-10 rounded-full;
+}
+
+.step-item.active .step {
+  @apply bg-[#73C002];
+}
+
+.step-item.active:not(:first-child):before {
+  @apply bg-[#73C002];
+}
+
+.step-item.next-active:not(:first-child):before {
+  @apply bg-[#73C002];
+}
+
+/* Base styling for unchecked checkbox */
+.ant-checkbox .ant-checkbox-inner {
+  border-color: #73c002 !important; /* Green border */
+}
+
+/* Hover styling for unchecked checkbox */
+.ant-checkbox:hover .ant-checkbox-inner {
+  border-color: #73c002 !important; /* Green border on hover */
+}
+
+/* Override the default checkbox color */
+.ant-checkbox-checked .ant-checkbox-inner {
+  background-color: #73c002 !important; /* Green color */
+  border-color: #73c002 !important; /* Green border */
+}
+
+.ant-checkbox-checked .ant-checkbox-inner:after {
+  border-color: white !important; /* Checkmark color */
+}
+
+/* Override hover styles for checked checkbox */
+.ant-checkbox-checked:hover .ant-checkbox-inner {
+  background-color: #73c002 !important; /* Keep green on hover */
+  border-color: #73c002 !important; /* Keep green border on hover */
+}
+
+.ant-checkbox-indeterminate .ant-checkbox-inner:after {
+  background-color: #73c002 !important;
+}
+
+.ant-checkbox-inner {
+  border-radius: 4px !important; /* Optional: adds rounded corners */
+}
+.gm-style-iw-chr {
+  display: none;
+}
+
+.gm-style-iw-d {
+  padding: 0 !important;
+  width: auto;
+  height: auto;
+}
+
+.gm-style-iw.gm-style-iw-c {
+  height: auto;
+}
+/* [data-column-id="action-btn"] {
+  position: sticky !important;
+  right: 0 !important;
+} */
+
+.DateInput {
+  width: auto !important;
+}
+.DateRangePickerInput__withBorder {
+  border: none !important;
+  display: flex !important;
+  align-items: center !important;
+}
+.DateInput_input {
+  width: 100% !important;
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+  color: #6b7280 !important;
+  border-radius: 8px;
+}
+
+.DateInput_input__focused {
+  border-color: #4f46e5 !important;
+}
+.DateRangePicker_picker {
+  z-index: 9999 !important;
+}
+.chat-area {
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For Internet Explorer */
+}
+
+.chat-area::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Edge */
+}
+
+
+/* Data Table Last Column Sticky */
+.rdt_Table .rdt_TableHead .rdt_TableHeadRow .rdt_TableCol:last-child, .rdt_Table .rdt_TableBody .rdt_TableRow .rdt_TableCell:last-child  {
+    position: sticky;
+    right: 0;
+    z-index: 9;
+    background: inherit;
 }

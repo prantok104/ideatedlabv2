@@ -1,0 +1,63 @@
+[
+    {
+      "label": "Flatbed Trailer",
+      "value": "flatbed"
+    },
+    {
+      "label": "Dry Van Trailer",
+      "value": "dry_van"
+    },
+    {
+      "label": "Refrigerated Trailer (Reefer)",
+      "value": "refrigerated"
+    },
+    {
+      "label": "Lowboy Trailer",
+      "value": "lowboy"
+    },
+    {
+      "label": "Step Deck Trailer (Drop Deck)",
+      "value": "step_deck"
+    },
+    {
+      "label": "Tanker Trailer",
+      "value": "tanker"
+    },
+    {
+      "label": "Livestock Trailer",
+      "value": "livestock"
+    },
+    {
+      "label": "Container Chassis",
+      "value": "container_chassis"
+    },
+    {
+      "label": "Side Kit Trailer",
+      "value": "side_kit"
+    },
+    {
+      "label": "Conestoga Trailer",
+      "value": "conestoga"
+    },
+    {
+      "label": "Double Drop Trailer",
+      "value": "double_drop"
+    },
+    {
+      "label": "Extendable Flatbed Trailer",
+      "value": "extendable_flatbed"
+    },
+    {
+      "label": "Multi-Car Trailer",
+      "value": "multi_car"
+    },
+    {
+      "label": "Hopper Bottom Trailer",
+      "value": "hopper_bottom"
+    },
+    {
+      "label": "End Dump Trailer",
+      "value": "end_dump"
+    }
+]
+

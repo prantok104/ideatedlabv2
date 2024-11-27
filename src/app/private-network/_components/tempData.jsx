@@ -1,0 +1,42 @@
+export const allContactData = [
+  {
+    id: 1,
+    name: "John Doe",
+    Authority: "Admin",
+    email: "johndoe@example.com",
+    phone: "+1234567890",
+    docStatus: "Active",
+  },
+  {
+    id: 2,
+    name: "Jane Smith",
+    Authority: "Manager",
+    email: "janesmith@example.com",
+    phone: "+1987654321",
+    docStatus: "Pending",
+  },
+  {
+    id: 3,
+    name: "Alice Johnson",
+    Authority: "User",
+    email: "alice.johnson@example.com",
+    phone: "+1122334455",
+    docStatus: "Active",
+  },
+  {
+    id: 4,
+    name: "Bob Brown",
+    Authority: "Moderator",
+    email: "bob.brown@example.com",
+    phone: "+1222333444",
+    docStatus: "Pending",
+  },
+  {
+    id: 5,
+    name: "Charlie Davis",
+    Authority: "Guest",
+    email: "charlie.davis@example.com",
+    phone: "+1555666777",
+    docStatus: "Active",
+  },
+];

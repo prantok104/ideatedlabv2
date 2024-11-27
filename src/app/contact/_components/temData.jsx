@@ -1,0 +1,42 @@
+export const temData = [
+  {
+    id: 1,
+    email: "john.doe@example.com",
+    name: "John Doe",
+    phone: "+1 123-456-7890",
+    description: "Courier request for urgent delivery",
+    docStatus: "Active",
+  },
+  {
+    id: 2,
+    email: "jane.smith@example.com",
+    name: "Jane Smith",
+    phone: "+1 987-654-3210",
+    description: "Inquiry about shipping rates",
+    docStatus: "Pending",
+  },
+  {
+    id: 3,
+    email: "mike.jones@example.com",
+    name: "Mike Jones",
+    phone: "+1 456-789-0123",
+    description: "Request for scheduled pickups",
+    docStatus: "Active",
+  },
+  {
+    id: 4,
+    email: "sara.connor@example.com",
+    name: "Sara Connor",
+    phone: "+1 654-321-0987",
+    description: "Issue with tracking order",
+    docStatus: "Pending",
+  },
+  {
+    id: 5,
+    email: "david.lee@example.com",
+    name: "David Lee",
+    phone: "+1 789-012-3456",
+    description: "Bulk shipment request",
+    docStatus: "Active",
+  },
+];

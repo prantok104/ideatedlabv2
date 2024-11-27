@@ -1,0 +1,39 @@
+.stepper {
+  @apply flex flex-wrap justify-center;
+}
+
+.stepper.horizontal {
+  @apply flex flex-nowrap;
+}
+
+.step {
+  @apply flex flex-col items-center;
+}
+
+.step-icon-btn {
+  @apply w-8 h-8 bg-gray-200 rounded-full text-gray-600 text-sm flex items-center justify-center;
+  @apply transition duration-300 ease-in-out;
+  @apply hover:bg-gray-300;
+  @apply focus:outline-none focus:ring-2 focus:ring-gray-400;
+}
+
+.step-icon-btn.active {
+  @apply bg-green-600 text-white;
+}
+
+.step-label {
+  @apply text-gray-600 text-sm mt-1;
+}
+
+.step-line {
+  @apply w-16 h-1 bg-gray-200;
+  margin-top: 12px;
+}
+
+.step.active .step-icon-btn {
+  @apply bg-green-600 text-white;
+}
+
+.step.active + .step-line {
+  @apply bg-green-600;
+}

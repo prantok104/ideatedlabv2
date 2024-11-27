@@ -1,0 +1,99 @@
+[
+    {
+      "label": "Agricultural Products",
+      "value": "agricultural_products"
+    },
+    {
+      "label": "Automotive Parts",
+      "value": "automotive_parts"
+    },
+    {
+      "label": "Building Materials",
+      "value": "building_materials"
+    },
+    {
+      "label": "Chemicals",
+      "value": "chemicals"
+    },
+    {
+      "label": "Consumer Goods",
+      "value": "consumer_goods"
+    },
+    {
+      "label": "Electronics",
+      "value": "electronics"
+    },
+    {
+      "label": "Food and Beverage",
+      "value": "food_and_beverage"
+    },
+    {
+      "label": "Furniture",
+      "value": "furniture"
+    },
+    {
+      "label": "Hazardous Materials",
+      "value": "hazardous_materials"
+    },
+    {
+      "label": "Industrial Equipment",
+      "value": "industrial_equipment"
+    },
+    {
+      "label": "Livestock",
+      "value": "livestock"
+    },
+    {
+      "label": "Machinery",
+      "value": "machinery"
+    },
+    {
+      "label": "Metals",
+      "value": "metals"
+    },
+    {
+      "label": "Paper Products",
+      "value": "paper_products"
+    },
+    {
+      "label": "Petroleum Products",
+      "value": "petroleum_products"
+    },
+    {
+      "label": "Pharmaceuticals",
+      "value": "pharmaceuticals"
+    },
+    {
+      "label": "Plastics and Rubber",
+      "value": "plastics_and_rubber"
+    },
+    {
+      "label": "Raw Materials",
+      "value": "raw_materials"
+    },
+    {
+      "label": "Refrigerated Goods",
+      "value": "refrigerated_goods"
+    },
+    {
+      "label": "Steel",
+      "value": "steel"
+    },
+    {
+      "label": "Textiles",
+      "value": "textiles"
+    },
+    {
+      "label": "Tires",
+      "value": "tires"
+    },
+    {
+      "label": "Vehicles",
+      "value": "vehicles"
+    },
+    {
+      "label": "Wood and Lumber",
+      "value": "wood_and_lumber"
+    }
+  ]
+  
